@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #29363D;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hexagon {
+    position: absolute;
+    width: 40px;
+    height: 69.28px;
+    background-color: #000;
+    opacity: 0;
+    animation: pulsate 5s ease infinite;
+}
+
+.hexagon::before,
+.hexagon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 69.28px;
+    background-color: inherit;
+}
+
+.hexagon::before {
+    transform: rotate(60deg);
+}
+
+.hexagon::after {
+    transform: rotate(-60deg);
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
